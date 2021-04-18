@@ -8,8 +8,8 @@ def greet(name: str, greeting_template = 'Hello, <name>!'):
     greeting = greeting_template.replace('<name>', name)
     return greeting
 
-print(greet("Jochum"))
-print(greet("Jochum", "What's up <name> !"))
+#print(greet("Jochum"))
+#print(greet("Jochum", "What's up <name> !"))
 
 #deel 2
 def force(mass, body='earth'):
@@ -26,22 +26,24 @@ def force(mass, body='earth'):
     'Moon': 1.62,
     'Pluto': 0.58
     }
-    gravity = bodies.get(body, "Undefined")
-    if (gravity != "undefined"):
-        print(f'the gravity from an object is {mass} kg on {body.lower()} is {round(mass*gravity,1)} Newton')
+    print(body)
+    gravity = round(bodies[body])
+    if (gravity):
         answer = round(mass * gravity, 1)
+        print(f'the gravity from an object is {mass} kg on {body.lower()} is {answer} Newton')
         return answer
     else:
-        return "undefined"
+        return "None"
  
 print(force(3.4, 'Moon'))
+
     
 
 #deel 3
 def pull(m1: float, m2: float, d: float, body: str):
     gravity = 6.674 * 10 ** (-11)
     if d != 0:
-        pull = round(gravity * (m1 * m2) / d ** 2, 1)
+        pull = round(gravity * (m1 * m2) / d ** 2, 2)
         print(f'The gravity from an object is {m1} kg on {body.lower()} is {pull} Newton')
         return pull
     else:
