@@ -8,46 +8,44 @@ def greet(name: str, greeting_template = 'Hello, <name>!'):
     greeting = greeting_template.replace('<name>', name)
     return greeting
 
-#print(greet("Jochum"))
-#print(greet("Jochum", "What's up <name> !"))
+print(greet("Jochum"))
+print(greet("Jochum", "What's up <name> !"))
 
 #deel 2
 def force(mass, body='earth'):
     bodies = {
-    'Sun': 274,
-    'Jupiter': 24.92,
-    'Neptune': 11.15,
-    'Saturn': 10.44,
-    'Earth': 9.798,
-    'Uranus': 8.87,
-    'Venus': 8.87,
-    'Mars': 3.71,
-    'Mercury': 3.7,
-    'Moon': 1.62,
-    'Pluto': 0.58
+    'sun': 274,
+    'jupiter': 24.92,
+    'neptune': 11.15,
+    'saturn': 10.44,
+    'earth': 9.798,
+    'uranus': 8.87,
+    'venus': 8.87,
+    'mars': 3.71,
+    'mercury': 3.7,
+    'moon': 1.62,
+    'pluto': 0.58
     }
-    print(body)
     gravity = round(bodies[body])
     if (gravity):
         answer = round(mass * gravity, 1)
-        print(f'the gravity from an object is {mass} kg on {body.lower()} is {answer} Newton')
+        print(f'the gravity from an object is {mass} kg on {body} is {answer} Newton')
         return answer
     else:
         return "None"
  
-print(force(3.4, 'Moon'))
+print(force(3.4, 'moon'))
 
     
 
 #deel 3
-def pull(m1: float, m2: float, d: float, body: str):
+def pull(m1: float, m2: float, d: float):
     gravity = 6.674 * 10 ** (-11)
     if d != 0:
         pull = round(gravity * (m1 * m2) / d ** 2, 2)
-        print(f'The gravity from an object is {m1} kg on {body.lower()} is {pull} Newton')
         return pull
     else:
         return 0
 
-print(pull(0.1, 5.972*10**24, 6.371*10**6, "earth"))
+print(pull(0.1, 5.972*10**24, 6.371*10**6))
 
