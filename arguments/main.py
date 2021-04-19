@@ -14,25 +14,24 @@ print(greet("Jochum", "What's up <name> !"))
 #deel 2
 def force(mass, body='earth'):
     bodies = {
-    'sun': 274,
-    'jupiter': 24.92,
-    'neptune': 11.15,
-    'saturn': 10.44,
-    'earth': 9.798,
-    'uranus': 8.87,
-    'venus': 8.87,
-    'mars': 3.71,
-    'mercury': 3.7,
-    'moon': 1.62,
-    'pluto': 0.58
+        'sun': 274,
+        'jupiter': 24.92,
+        'neptune': 11.15,
+        'saturn': 10.44,
+        'earth': 9.798,
+        'uranus': 8.87,
+        'venus': 8.87,
+        'mars': 3.71,
+        'mercury': 3.7,
+        'moon': 1.62,
+        'pluto': 0.58
     }
-    gravity = round(bodies[body])
+    gravity = round(bodies[body], 1)
     if (gravity):
-        answer = round(mass * gravity, 1)
+        answer = mass * gravity
         print(f'the gravity from an object is {mass} kg on {body} is {answer} Newton')
         return answer
-    else:
-        return "None"
+    return
  
 print(force(3.4, 'moon'))
 
@@ -42,10 +41,9 @@ print(force(3.4, 'moon'))
 def pull(m1: float, m2: float, d: float):
     gravity = 6.674 * 10 ** (-11)
     if d != 0:
-        pull = round(gravity * (m1 * m2) / d ** 2, 2)
+        pull = gravity * (m1 * m2) / d ** 2
         return pull
-    else:
-        return 0
+    return
 
 print(pull(0.1, 5.972*10**24, 6.371*10**6))
 
